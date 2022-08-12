@@ -1,54 +1,83 @@
-//
-//  ContentView.swift
-//  Bullseye
-//
-//  Created by Lucas on 09/08/22.
-//
+  //
+  //  ContentView.swift
+  //  Bullseye
+  //
+  //  Created by Lucas on 09/08/22.
+  //
 
 import SwiftUI
 
 struct ContentView: View {
-    @State private var alertIsVisible = false
-    @State private var sliderValue = 50.0
-    @State private var game = Game()
-
-    var body: some View {
-        VStack {
-            Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
-                .bold()
-                .kerning(2.0)
-                .multilineTextAlignment(.center)
-                .lineSpacing(4.0)
-                .font(.footnote)
-            Text(String(game.target))
-                .kerning(-1.0)
-                .font(.largeTitle)
-                .fontWeight(.black)
-            HStack {
-                Text("1")
-                    .bold()
-                Slider(value: $sliderValue, in: 1.0 ... 100.0)
-                Text("100")
-                    .bold()
-            }
-            Button("Hit me") {
-                print("Hello, SwiftUI!")
-                alertIsVisible = true
-            }
-            .alert("Hello there!", isPresented: $alertIsVisible) {
-                Button("Awesome!") {}
-            } message: {
-                let roundedValue = Int(sliderValue.rounded())
-                Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
-            }
+  @State private var alertIsVisible = false
+  @State private var sliderValue = 50.0
+  @State private var game = Game()
+  
+  var body: some View {
+    ZStack {
+      Color("BackgroundColor")
+        .edgesIgnoringSafeArea(.all)
+      VStack {
+        InstructionsView(game: $game)
+        HStack {
+          Text("1")
+            .bold()
+            .foregroundColor(Color("TextColor"))
+          Slider(value: $sliderValue, in: 1.0 ... 100.0)
+          Text("100")
+            .bold()
+            .foregroundColor(Color("TextColor"))
         }
+        .padding()
+        Button(action: {
+          print("Hello, SwiftUI!")
+          alertIsVisible = true
+        }) {
+          Text("Hit me".uppercased())
+            .bold()
+            .font(.title3)
+        }
+        .padding(20.0)
+        .background(
+          ZStack {
+            Color("ButtonColor")
+            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+          }
+        )
+        .foregroundColor(Color.white)
+        .cornerRadius(21.0)
+        .alert("Hello there!", isPresented: $alertIsVisible) {
+          Button("Awesome!") {}
+        } message: {
+          let roundedValue = Int(sliderValue.rounded())
+          Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
+        }
+      }
     }
+  }
+}
+
+struct InstructionsView: View {
+  @Binding var game: Game
+  
+  var body: some View {
+    VStack {
+      InstructionText(text: "🎯🎯🎯\nPut the Bullseye as close as you can to")
+        .padding(.leading, 30.0)
+        .padding(.trailing, 30.0)
+      BigNumberText(text: String(game.target))
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        ContentView()
-            .previewLayout(.fixed(width: 812, height: 375))
-    }
+  static var previews: some View {
+    ContentView()
+    ContentView()
+      .previewInterfaceOrientation(.landscapeRight)
+    ContentView()
+      .preferredColorScheme(.dark)
+    ContentView()
+      .preferredColorScheme(.dark)
+      .previewInterfaceOrientation(.landscapeRight)
+  }
 }
