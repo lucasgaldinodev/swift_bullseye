@@ -1,9 +1,9 @@
-//
-//  BullseyeApp.swift
-//  Bullseye
-//
-//  Created by Lucas on 09/08/22.
-//
+    //
+    //  BullseyeApp.swift
+    //  Bullseye
+    //
+    //  Created by Lucas on 09/08/22.
+    //
 
 import SwiftUI
 
