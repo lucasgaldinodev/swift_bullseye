@@ -21,7 +21,7 @@ struct LeaderboardView: View {
           VStack(spacing: 10) {
               ForEach(game.leaderboardEntries.indices, id: \.self) { i in
               let leaderboardEntry = game.leaderboardEntries[i]
-              RowView(index: i + 1, score: leaderboardEntry.score, date: leaderboardEntry.date)
+                  RowView(index: i + 1, score: leaderboardEntry.score, round: leaderboardEntry.round)
             }
           }
         }
@@ -33,7 +33,7 @@ struct LeaderboardView: View {
 struct RowView: View {
   let index: Int
   let score: Int
-  let date: Date
+  let round: Int
 
   var body: some View {
     HStack {
@@ -42,7 +42,7 @@ struct RowView: View {
       ScoreText(score: score)
         .frame(width: Constants.Leaderboard.leaderboardScoreColWidth)
       Spacer()
-      DateText(date: date)
+      RoundText(round: round)
         .frame(width: Constants.Leaderboard.leaderboardDateColWidth)
     }
     .background(
@@ -61,7 +61,7 @@ struct HeaderView: View {
   @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
   var body: some View {
-    ZStack {
+      ZStack {
       HStack {
         if verticalSizeClass == .regular && horizontalSizeClass == .compact {
           BigBoldText(text: "Placar")
@@ -72,7 +72,7 @@ struct HeaderView: View {
         }
       }
       .padding(.top)
-      HStack {
+        HStack {
         Spacer()
         Button(action: {
           leaderboardIsShowing = false
@@ -95,7 +95,7 @@ struct LabelView: View {
       LabelText(text: "Pontos")
         .frame(width: Constants.Leaderboard.leaderboardScoreColWidth)
       Spacer()
-      LabelText(text: "Horário")
+      LabelText(text: "Rodada")
         .frame(width: Constants.Leaderboard.leaderboardDateColWidth)
     }
     .padding(.leading)

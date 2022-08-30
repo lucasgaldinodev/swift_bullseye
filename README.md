@@ -11,10 +11,8 @@ Trata-se de um projeto em Swift, para executar é necessário:
 * Baixar o software Xcode.
 * Abrir o arquivo com a extensão ".xcodeproj" na pasta raiz do projeto.
 
-## Capturas de Tela
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosDark1.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosDark2.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosDark3.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosLight1.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosLight2.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/iosLight3.png)
+## Capturas de Tela 
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark1.png)
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark2.png)
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark4.png)
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/light4.png)
