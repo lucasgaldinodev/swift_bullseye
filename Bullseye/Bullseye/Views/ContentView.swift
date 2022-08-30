@@ -58,7 +58,6 @@ struct SliderView: View {
       Slider(value: $sliderValue, in: 1.0...100.0)
       SliderLabelText(text: "100")
     }
-    .padding()
   }
 }
 

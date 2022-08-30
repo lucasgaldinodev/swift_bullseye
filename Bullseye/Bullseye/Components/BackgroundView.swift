@@ -23,7 +23,7 @@ struct BackgroundView: View {
   }
 }
 
-struct TopView: View {
+struct BottomView: View {
   @Binding var game: Game
   @State private var leaderboardIsShowing = false
 
@@ -52,13 +52,13 @@ struct NumberView: View {
 
   var body: some View {
     VStack(spacing: 5) {
-      LabelText(text: title.uppercased())
+        LabelText(text: title.uppercased())
       RoundRectTextView(text: text)
     }
   }
 }
 
-struct BottomView: View {
+struct TopView: View {
   @Binding var game: Game
 
   var body: some View {
