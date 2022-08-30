@@ -12,7 +12,7 @@ Trata-se de um projeto em Swift, para executar é necessário:
 * Abrir o arquivo com a extensão ".xcodeproj" na pasta raiz do projeto.
 
 ## Capturas de Tela 
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark1.png)
-![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark2.png)
 ![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark4.png)
 ![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/light4.png)
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark1.png)
+![](https://github.com/lucasgaldinodev/swift_bullseye/blob/main/Screenshots/dark2.png)
